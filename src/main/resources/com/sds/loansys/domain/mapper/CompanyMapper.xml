@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sds.loansys.domain.entity.mapper.CompanyMapper">
+	<resultMap type="Company" id="CompanyResultMap"
+		extends="com.sds.loansys.domain.entity.AbstractCompanyMapper.abstractCompanyResultMap">
+	</resultMap>
+	<select id="findAll" resultMap="CompanyResultMap">
+		SELECT * FROM T_COMPANY where 1=1
+		<if test="s_NO!=null and s_NO!=''"> and NO=#{s_NO} </if>
+		<if test="s_companyname!=null and s_companyname!=''"> and companyname=#{s_companyname} </if>
+		<if test="s_principalname!=null and s_principalname!=''"> and principalname=#{s_principalname} </if>
+		ORDER BY ID DESC
+	</select>
+	<select id="findComnaybyid" resultMap="CompanyResultMap">
+		SELECT
+		ID,NO,companyname,principalname,totalmoney,mobile,address,remark,gongzibanjihuashu,qiyejihuashu,createtime,createuser
+		FROM T_COMPANY
+		where ID = #{id} order by id desc
+	</select>
+	<select id="searchcompanybydim" resultMap="CompanyResultMap"
+		parameterType="String">
+		SELECT
+		ID,NO,companyname,principalname,totalmoney,mobile,address,remark,gongzibanjihuashu,qiyejihuashu,createtime,createuser
+		FROM T_COMPANY
+		where NO like #{dim_search_value} or companyname
+		like
+		#{dim_search_value} or principalname
+		like #{dim_search_value} or mobile
+		like #{dim_search_value} or address
+		like #{dim_search_value} or remark
+		like #{dim_search_value} or createuser 
+		like #{dim_search_value} order by id desc
+	</select>
+	
+	<insert id="insertCompany" >
+		INSERT INTO T_COMPANY
+		(NO,COMPANYNAME,PRINCIPALNAME,TOTALMONEY,MOBILE,ADDRESS,REMARK,GONGZIBANJIHUASHU,QIYEJIHUASHU,CREATETIME,CREATEUSER)
+		VALUES
+		(#{s_NO},#{s_companyname},#{s_principalname},#{d_totalmoney},#{s_mobile},#{s_address},#{s_remark},#{i_gongzibanjihuashu},#{i_qiyejihuashu},#{t_createtime},#{s_createuser})
+	</insert>
+	<select id="deleteComnaybyid" resultType="java.lang.Long">
+		DELETE FROM T_COMPANY
+		WHERE ID = #{id}
+	</select>
+	
+	
+	
+</mapper>

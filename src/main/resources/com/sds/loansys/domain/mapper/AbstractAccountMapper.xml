@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sds.loansys.domain.entity.AbstractAccountMapper">
+	<resultMap type="abstractAccount" id="abstractAccountResultMap">
+		<id property="id" column="ID" />
+		<result property="s_NO" column="NO" />
+		<result property="l_companyid" column="companyid" />
+		<result property="s_accountname" column="accountname" />
+		<result property="d_money" column="money" />
+		<result property="i_moneytype" column="moneytype" />
+		<result property="t_savetime" column="savetime" />
+		<result property="t_tacktime" column="tacktime" />
+		<result property="t_interesttime" column="interesttime" />
+		<result property="d_interest" column="interest" />
+		<result property="i_payflag" column="payflag" />
+		<result property="i_isbankbook" column="isbankbook" />
+		<result property="s_bankno" column="bankno" />
+		<result property="s_idno" column="idno" />
+		<result property="s_mobile" column="mobile" />
+		<result property="s_address" column="address" />
+		<result property="s_remark" column="remark" />
+		<result property="t_createtime" column="createtime" />
+		<result property="s_createuser" column="createuser" />
+	</resultMap>
+</mapper>
