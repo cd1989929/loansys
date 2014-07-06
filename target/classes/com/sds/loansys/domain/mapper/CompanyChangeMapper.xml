@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sds.loansys.domain.entity.mapper.CompanychangeMapper">
+	<resultMap type="Company" id="CompanychangeResultMap"
+		extends="com.sds.loansys.domain.entity.AbstractCompanyMapper.abstractCompanyResultMap">
+		<result property="l_companyid" column="comid" />
+		<result property="t_updatetime" column="updatetime" />
+		<result property="s_updateuser" column="updateuser" />
+		<result property="s_version" column="version" />
+	</resultMap>
+	<select id="findall" resultMap="CompanychangeResultMap">
+		SELECT * FROM T_COMPANYCHANGE ORDER BY
+		ID DESC
+	</select>
+</mapper>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="spdsample:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="spdsample-1.0.0-BUILD-SNAPSHOT.war">
+      <element id="artifact" artifact-name="spdsample:war exploded" />
+    </root>
+  </artifact>
+</component>

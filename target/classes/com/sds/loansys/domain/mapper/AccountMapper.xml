@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sds.loansys.domain.entity.mapper.AccountMapper">
+	<resultMap type="account" id="accountResultMap"
+		extends="com.sds.loansys.domain.entity.AbstractAccountMapper.abstractAccountResultMap">
+	</resultMap>
+	<select id="findAll" resultMap="accountResultMap">
+		SELECT * FROM T_Account
+	</select>
+</mapper>

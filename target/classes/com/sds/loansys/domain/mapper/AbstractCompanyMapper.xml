@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sds.loansys.domain.entity.AbstractCompanyMapper">
+	<resultMap type="AbstractCompany" id="abstractCompanyResultMap">
+		<id property="id" column="ID" />
+		<result property="s_NO" column="NO" />
+		<result property="s_companyname" column="companyname" />
+		<result property="s_principalname" column="principalname" />
+		<result property="d_totalmoney" column="totalmoney" />
+		<result property="s_mobile" column="mobile" />
+		<result property="s_address" column="address" />
+		<result property="i_gongzibanjihuashu" column="gongzibanjihuashu" />
+		<result property="i_qiyejihuashu" column="qiyejihuashu" />
+		<result property="t_createtime" column="createtime" />
+		<result property="s_createuser" column="createuser" />
+		<result property="s_remark" column="remark" />
+	</resultMap>
+</mapper>
